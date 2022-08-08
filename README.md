@@ -12,7 +12,7 @@
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
-# laragigs
+# laragaks
 
 
 <h2>Post your jobs </h2>
