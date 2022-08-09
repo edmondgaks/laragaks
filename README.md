@@ -15,4 +15,6 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 # laragaks
 
 
-<h2>Post your jobs </h2>
+<h2>Find jobs 💻💻 that have been posted by people allover the world</h2>
+
+<p>Let's fight poverty together and gain some 💰💶💶💶 by finding jobs</p>
