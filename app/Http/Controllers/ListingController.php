@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Listing;
+use Illuminate\Contracts\Session\Session;
 use Illuminate\Validation\Rule;
 
 class ListingController extends Controller
@@ -35,6 +36,7 @@ class ListingController extends Controller
             'description' => 'required'
         ]);
         Listing::create($formFields);
-        return redirect('/');
+        
+        return redirect('/')->with('message','Listing created successfully');
     }
 }
