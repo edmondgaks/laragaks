@@ -9,7 +9,8 @@ use App\Models\Listing;
 class ListingController extends Controller
 {
     // Show all listings
-    public function index() {
+    public function index(Request $request) {
+        dd($request->tag);
         return view('listings.index', [
             'listings' => Listing::all()
         ]);
