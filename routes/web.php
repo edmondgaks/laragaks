@@ -15,11 +15,10 @@ use App\Models\Listing;
 
 Route::get('/', function () {
     return view('listings', [
-        'heading' => 'Latest listings',
         'listings' => Listing::all()
     ]);
 });
-
+ 
 Route::get('/listings/{listing}', function(Listing $listing) {
     return view('Listing', [
         'listing' => $listing
