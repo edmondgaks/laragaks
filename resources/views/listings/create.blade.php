@@ -9,7 +9,9 @@
             <p class="mb-4">Post a gig to find a developer</p>
         </header>
         
-        <form action="">
+        <form method="POST" action="/listings">
+            @csrf
+
             <div class="mb-6">
                 <label for="company" class="inline-block text-lg mb-2">Company Name</label>
                 <input type="text" class="border border-gray-200 rounded p-2 w-full" name="company" />
@@ -47,12 +49,12 @@
                 placeholder="Example: Laravel, Backend, Postgres, etc" />
             </div>
             
-            <div class="mb-6">
+            {{-- <div class="mb-6">
                 <label for="logo" class="inline-block text-lg mb-2">
                     Company Logo
                 </label>
                 <input type="file" class="border border-gray-200 rounded p-2 w-full" name="logo" />
-            </div>
+            </div> --}}
             
             <div class="mb-6">
                 <label for="description" class="inline-block text-lg mb-2">
@@ -71,5 +73,4 @@
             </div>
         </form>
     </x-card>
-
 </x-layout>
