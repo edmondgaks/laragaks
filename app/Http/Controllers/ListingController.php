@@ -47,4 +47,22 @@ class ListingController extends Controller
     public function edit(Listing $listing) {
         return view('listings.edit', ['listing' => $listing]);
     }
+    public function update(Request $request, Listing $listing) {
+        // dd($request->file('logo')->store()); 
+        $formFields = $request->validate([
+            'title' => 'required',
+            'company' => ['required'],
+            'website' => 'required',
+            'email' => ['required','email'],
+            'location' => 'required',
+            'tags' => 'required',
+            'description' => 'required'
+        ]);
+        if($request->hasFile('logo')) {
+            $formFields['logo'] = $request->file('logo')->store('logos','public');
+        }
+        $listing->create($formFields);
+        
+        return back()->with('message','Listing updated successfully');
+    }
 }

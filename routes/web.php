@@ -18,6 +18,7 @@ use App\Models\Listing;
 Route::get('/', [ListingController::class, 'index']);
  
 //Show Create form
+
 Route::get('/listings/create', [ListingController::class, 'create']);
 // Store listing data
 Route::post('/listings', [ListingController::class, 'store']);
@@ -25,5 +26,8 @@ Route::post('/listings', [ListingController::class, 'store']);
 // Show edit form 
 
 Route::get('/listings/{listing}/edit', [ListingController::class, 'edit']); 
+
+// Edit Submit to Update
+Route::put('/listings/{listing}', [ListingController::class, 'update']);
 
 Route::get('/listings/{listing}', [ListingController::class, 'show']);
