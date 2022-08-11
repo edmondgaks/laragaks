@@ -31,6 +31,6 @@ class UserController extends Controller
         return redirect('/')->with('message','You have been logged out successfully');
     }
     public function login(Request $request) {
-        
+        return view('users.login');
     }
 }
