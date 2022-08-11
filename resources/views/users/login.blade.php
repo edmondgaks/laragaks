@@ -7,7 +7,7 @@
             <p class="mb-4">Log into your account to create gigs</p>
         </header>
 
-        <form method="POST" action="/users/auth">
+        <form method="POST" action="/users/authenticate">
             @csrf
             
 
