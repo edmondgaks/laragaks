@@ -10,9 +10,9 @@
     <x-layout>
         @include('partials._hero')
         @include('partials._search');
-        <div class="lg:grid lg:grid-cols-2 gap-4 space-y-4 md:space-y-0 mx-4">
+        <div class="grid gap-5 grid-cols-3 mx-4 md:grid-cols-2 lg:grid-cols-3 sm:grid-cols-1">
             @unless(count($listings) == 0)
-            @foreach ($listings as $listing) 
+            @foreach ($listings as $listing)
                 <x-listing-card :listing="$listing" />
             @endforeach
             @else 

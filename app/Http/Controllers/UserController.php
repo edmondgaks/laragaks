@@ -14,7 +14,7 @@ class UserController extends Controller
         $formFields = $request->validate([
             'name' => ['required','min:3'],
             'email' => ['required','email', Rule::unique('users','email')],
-            'password' => 'required|confirmed|min:6'
+            'password' => 'required|min:6'
         ]);
         // Hash Password
         $formFields['password'] = bcrypt($formFields['password']);
@@ -22,7 +22,7 @@ class UserController extends Controller
         $user = User::create($formFields);
         // Login User
         auth()->login($user);
-        return redirect('/')->with('message','User created and logged in successfully');
+        return redirect('/userStory')->with('message','User created and logged in successfully');
     }
     public function logout(Request $request) {
         auth()->logout();
@@ -44,5 +44,8 @@ class UserController extends Controller
             return redirect('/')->with('message','You are now logged in!');
         }
         return back()->withErrors(['email' => 'Invalid Credentials'])->onlyInput('email');
+    }
+    public function userStory() {
+        return view('users.userStory');
     }
 }
